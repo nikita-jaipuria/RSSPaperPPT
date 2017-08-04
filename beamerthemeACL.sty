@@ -1,0 +1,49 @@
+% Copyright 2004 by Madhusudan Singh <madhusudan.singh@gmail.com>
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/theme/beamerthemeACL.sty,v 1.2 2007/01/28 20:48:30 tantau Exp $
+
+\DeclareOptionBeamer{logoshiftdown}
+{\PassOptionsToPackage{logoshiftdown = #1}{beamerouterthemeACL}}
+\DeclareOptionBeamer{logoshiftleft}
+{\PassOptionsToPackage{logoshiftleft = #1}{beamerouterthemeACL}}
+\DeclareOptionBeamer{titleshrinkwidth}
+{\PassOptionsToPackage{titleshrinkwidth = #1}{beamerouterthemeACL}}
+\DeclareOptionBeamer{titleshiftleft}
+{\PassOptionsToPackage{titleshiftleft = #1}{beamerouterthemeACL}}
+
+\ProcessOptionsBeamer
+
+
+\mode<presentation>
+
+\useinnertheme[shadow=true]{rounded}
+\useoutertheme{ACL}
+%\usecolortheme{beaver}
+\usecolortheme{dolphin}
+
+\setbeamerfont{block title}{size={}}
+\setbeamercolor{titlelike}{parent=structure,bg=white}
+\setbeamercolor{title}{use = palette secondary, bg = palette secondary.bg}
+%\setbeamercolor{alerted text}{fg = red!90!black}
+\setbeamercolor{alerted text}{use = structure, fg = structure.fg}
+\setbeamerfont{alerted text}{series = \bfseries}
+
+% Set color scheme for Theorem-like environments
+\addtobeamertemplate{theorem begin}{
+	\setbeamercolor{block title}{parent = palette tertiary}
+	\setbeamercolor{block body}{parent = palette secondary}
+}{}
+\addtobeamertemplate{theorem end}{}{
+	\setbeamercolor{block title}{parent = structure}
+	\setbeamercolor{block body}{}
+}
+
+\mode
+<all>

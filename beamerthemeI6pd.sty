@@ -1,0 +1,229 @@
+\ProvidesPackage{beamerthemeI6pd} % this style was created by Philippe Dreuw
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<presentation>
+\usecolortheme{dolphin}
+
+\setbeamercolor{alerted text}{use = structure, fg = structure.fg}
+\setbeamerfont{alerted text}{series = \bfseries}
+
+%% custom colors
+\definecolor{i6blue}{cmyk}{1,0.305,0,0.06}
+\definecolor{i6colorschemeHeadline}{HTML}{A3BEDD}  % for headline bg
+\definecolor{i6colorschemeFootline}{HTML}{4C8586}  % for headline bg
+
+% body colors and fonts
+\setbeamercolor*{normal text}{fg=black,bg=white}
+
+%% block environment
+\setbeamercolor*{block body}{bg=white,fg=black}
+\setbeamercolor*{block title}{fg=black,bg=structure.fg!50}
+\setbeamerfont{block title}{size=\large,series=\bf}
+
+\setbeamercolor{headline}{fg=red}
+\setbeamercolor{title in headline}{fg=black}
+\setbeamercolor{author in headline}{fg=black}
+\setbeamercolor{institute in headline}{fg=black}
+\setbeamercolor{logo in headline}{fg=black}
+\setbeamercolor{separation line}{bg=white}
+
+\setbeamercolor{footline}{fg=white,bg=structure.fg}
+%\setbeamerfont{footline}{fg=white, size=\normalsize}
+
+\setbeamercolor{structure}{fg=i6blue}
+
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[rounded=true,leftskip=1cm,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[rounded=true,colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{  
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+      \begin{column}{.01\paperwidth}
+      \end{column}
+      \begin{column}{.15\paperwidth}
+%        \begin{center}
+          \includegraphics[trim=0 0 190 0,clip,width=8cm]{MITlogo}
+          \includegraphics[trim=20 60 0 0,clip,width=8cm]{AO-logo-high_color-top-MIT}
+%        \end{center}
+       \hfill %\vskip1ex
+      \end{column}
+      \begin{column}{.69\paperwidth}
+        \vskip4ex
+\begin{center}
+        \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[2ex]}
+        \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
+        \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}}     
+\end{center}
+      \end{column}
+      \begin{column}{.15\paperwidth}
+        \vskip1cm
+%        \begin{center}
+ \hfill
+          \includegraphics[height=4cm]{LIDSlogo}
+         \includegraphics[height=3.5cm]{ACL_logo}
+%        \end{center}
+        \vskip1.5cm
+      \end{column}
+      \begin{column}{.02\paperwidth}
+      \end{column}
+    \end{columns} \vspace*{.25in}
+  \end{beamercolorbox}
+  
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+  
+  \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{footline}%
+   Aerospace Controls Laboratory, Massachusetts Institute of Technology, Cambridge, MA 02139 \hfill WWW: \texttt{http://acl.mit.edu}
+    \vskip1ex
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
+
+\newcommand{\jcols}[4]{
+\begin{columns}[T]\begin{column}[T]{#3\textwidth} #1 \end{column}
+\begin{column}[T]{#4\textwidth} #2 \end{column}
+\end{columns}}
+
+\newcommand{\jcolst}[4]
+{
+\begin{columns}[t]
+\begin{column}{#3\textwidth}
+#1
+\end{column}
+\begin{column}{#4\textwidth}
+#2
+\end{column}
+\end{columns}}
+
+\newcommand{\jcolsb}[4]
+{\begin{columns}[b]
+\begin{column}{#3\textwidth} #1 \vspace{0pt}
+\end{column}
+\begin{column}{#4\textwidth} #2 \vspace{0pt}
+\end{column}
+\end{columns}}
+
+\newcommand{\jcolsc}[4]
+{\begin{columns}[c]
+\begin{column}{#3\textwidth} #1 \vspace{0pt}
+\end{column}
+\begin{column}{#4\textwidth} #2 \vspace{0pt}
+\end{column}
+\end{columns}}
+
+\definecolor{Maroon}{RGB}{112,0,0}
+\definecolor{Crimson}{RGB}{200,0,0}
+\definecolor{purple}{RGB}{112,0,112}
+
+\newcommand{\bee}{\begin{enumerate}}
+\newcommand{\eee}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\bii}{\begin{itemize}\small}
+\newcommand{\beee}{\begin{enumerate}\scriptsize}
+\newcommand{\biii}{\begin{itemize}\footnotesize}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\jtem}{\vfill\item}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\njra}{\color{red} $\Rightarrow$~\color{black}}
+\newcommand{\nred}[1]{{\tiny \color{red} XX #1 XX\color{black}}}
+%\newcommand{\jframe}[1]{\begin{frame}\nred{#1}\end{frame}}
+\newcommand{\jframe}[2]{\begin{frame}\frametitle{#1} #2 \end{frame}}
+\newcommand{\jframeb}[2]{\begin{frame}[t]{#1} \begin{itemize} #2 \end{itemize} \end{frame}}
+\newcommand{\jframet}[2]{\begin{frame}[t]\frametitle{#1} #2 \end{frame}}
+\newcommand{\ji}[2]{\begin{itemize}\setlength{\itemsep}{#1mm}{#2}\end{itemize}}
+\newcommand{\jen}[2]{\begin{enumerate}\setlength{\itemsep}{#1mm}{#2}\end{enumerate}}
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\todo}[1]{{\color{magenta} XX- #1 -XX}}
+\newcommand{\XX}[1]{{\color{red} XX- #1 -XX}}
+\newcommand{\alertr}[1]{\textbf{\color{red} #1}}
+
+% additional settings
+\setbeamerfont{itemize}{size=\normalsize}
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+
+\setbeamercolor{normal text}{fg=black}  
+\setbeamertemplate{enumerate items}[ball]
+\setbeamertemplate{enumerate subitem}{(\alph{enumii})}
+\setbeamertemplate{enumerate subsubitems}[triangle]
+\setbeamertemplate{itemize item}{\color{blue} $\filledmedtriangleright$\color{black}}
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{itemize subitem}{\scriptsize \color{red} $\filledmedtriangleright$\color{black}}
+
+\newenvironment<>{varblock}[2][\textwidth]{
+    \begin{center} \vspace*{-18pt}
+      \begin{minipage}[t]{#1}
+        \setlength{\textwidth}{#1}
+          \begin{actionenv}#3
+            \def\insertblocktitle{#2}
+            \par
+            \usebeamertemplate{block begin}}
+  {\par
+      \usebeamertemplate{block end}
+    \end{actionenv}
+  \end{minipage}
+\end{center}}
+
+\usepackage{tikz,tkz-graph,tkz-arith,tkz-berge}
+\usetikzlibrary{arrows,shapes,positioning}
+
+\tikzstyle{input} = [coordinate] %
+%\tikzstyle{block} = [draw, fill=red!20, rectangle, minimum height=3em, minimum width=6em] %
+%\tikzstyle{block2} = [draw, fill=blue!20, diamond, minimum height=3em, minimum width=6em] %
+
+\iftrue
+\usetikzlibrary{shapes,positioning,automata,arrows,fit,backgrounds,calc}
+\tikzstyle{block} = [draw, fill=blue!20, rectangle,minimum height=1em, minimum width=2em]
+\tikzstyle{block2} = [draw, fill=blue!10, rectangle,minimum height=.1em, minimum width=.2em]
+\tikzstyle{sum} = [draw, fill=blue!20, circle, node distance=1cm]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+\usetikzlibrary{trees}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\fi
+
+\usepackage[square, numbers, comma,sort&compress]{natbib}	% use Natbib for author-name
+									% citations. In a presentation,
+									% this is more legible than pure
+									% numbers, like [21]. Google
+									% "natbib" for more information.
+									% Instead of "\cite{abc}", use
+									% "\citep{abc}" or "\citet{abc}"
+%\bibliographystyle{plainnat}		% Natbib specific
+%\bibpunct{(}{)}{,}{a}{}{,}			% Natbib specific
+\setlength{\bibsep}{0.0pt}

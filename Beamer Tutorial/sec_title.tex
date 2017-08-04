@@ -1,0 +1,104 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Making a Title Slide}
+	\begin{itemize}
+		\item Title and subtitle
+		\begin{verbatim}
+			\title[Abbrev. title]{Full title}
+			\subtitle[]{Full subtitle}
+		\end{verbatim}
+\vspace{0.2in}
+		\item Subtitle is optional
+		\item Abbreviations are also optional:
+		\begin{verbatim}
+			\title[]{Full title}
+		\end{verbatim}
+%		\item Authors and their institutions
+%		\begin{verbatim}
+%			\author[abbrev.]{Full Name \inst{1}}
+%			\institute[abbrev.]	{\inst{1} Institute 1}
+%		\end{verbatim}
+	\end{itemize}
+\end{frame}
+
+%Create title slide with abbreviated title
+\title[Abbrev. Title]{Full title} 
+\subtitle[]{Full subtitle} 
+\author{}
+\institute{} 
+\date{} 
+\frame{\titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Making a Title Slide}
+	\begin{itemize}
+		\item Title and subtitle
+		\begin{verbatim}
+			\title[Abbrev. title]{Full title}
+			\subtitle[]{Full subtitle}
+		\end{verbatim}
+\vspace{0.2in}
+		\item Subtitle is optional
+		\item Abbreviations are also optional:
+		\begin{verbatim}
+			\title[]{Full title}
+		\end{verbatim}
+%		\item Authors and their institutions
+%		\begin{verbatim}
+%			\author[abbrev.]{Full Name \inst{1}}
+%			\institute[abbrev.]	{\inst{1} Institute 1}
+%		\end{verbatim}
+	\end{itemize}
+\end{frame}
+
+%Create title slide without abbreviated title
+\title[]{Full title} 
+\subtitle[]{Full subtitle} 
+\author{}
+\institute{} 
+\date{} 
+\frame{\titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Making a Title Slide}
+	\begin{itemize}
+		\item Single author
+		\begin{verbatim}
+			\author[abbrev. name]{Your full name}
+		\end{verbatim}
+\vspace{0.2in}
+		\item Including lab affiliations
+		\begin{verbatim}
+			\author[abbrev. name]{Your full name \inst{1}}
+			\institute[abbrev. lab]{\inst{1} Your affiliation}
+		\end{verbatim}
+\vspace{0.2in}
+		\item Multiple authors and affiliations
+		{\small
+		\begin{verbatim}
+			\author{Name 1 \inst{1}, Name 2\inst{2}, \\ and Name 3\inst{3}}
+			\institute{\inst{1} One \and \inst{2} Two \and \inst{3} Three}
+		\end{verbatim}
+		}
+\vspace{0.2in}
+		\item Add the date (when you compiled the presentation)
+		\begin{verbatim}
+			\date{\today}
+		\end{verbatim}
+	\end{itemize}
+\end{frame}
+
+%Create the slide with authors and affiliations
+\title[Abbrev. title]{Full title} 
+\subtitle[]{Full subtitle} 
+\author[Abbrev. name]{First Author\inst{1}, Second Author\inst{2}, \\ and Third Author\inst{3}}
+\institute[Abbrev. lab]{\inst{1} First author's affiliation \and \inst{2} Second author's affiliation \and \inst{3} Third author's affiliation}
+\date{\today} 
+\frame{\titlepage}
+
+%Reset title stuff
+\title[Beamer Slides]{Making Slides with Beamer} %Make the title
+\subtitle[]{An Introduction} %Make the subtitle (if applicable)
+\author[J. Quindlen]{Jack Quindlen \inst{1}} %Declare author(s)
+\institute[ACL,MIT]	{\inst{1} Aerospace Controls Laboratory, MIT } %declare your institution, ie the lab
+\date{\today} %Add the date (when the presentation is compiled)

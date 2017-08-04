@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Headers and Footers}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Adding Headers} %Note that I'm throwing in a term ``fragile'' alongside the starndard ``[t]''.  You won't need to include this unless you're doing fancier formatting like I am doing with ``\verb''
+	\begin{itemize}
+		\item Look at the top of the slide - see the headers?
+\vspace{0.2in} %adds a vertical space between the next line
+		\item These can be controlled using \verb|\section{Add section}| and \verb|\subsection{Add subsection}|
+\vspace{0.2in} %adds a vertical space between the next line
+		\item Use the following code to change the headers
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Adding Headers} 
+	\begin{lstlisting} 
+\section{This controls section name}
+\subsection{This controls subsection name}
+\begin{frame}[t]{Example Slide 1}
+	Add your text here
+\end{frame }
+
+\subsection{Change subsection name}
+\begin{frame}[t]{Example Slide 2}
+	Notice the section name didn't change
+\end{frame }
+	\end{lstlisting} %End
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{This controls section name}
+\subsection{This controls subsection name}
+\begin{frame}[t]{Example Slide 1} %Example slides
+	Add your text here
+\end{frame}
+
+\subsection{Change subsection name}
+\begin{frame}[t]{Example Slide 2}
+	Notice the section name didn't change
+\end{frame}
+\section{Formatting Things} %Reset section
+\subsection{Headers and Footers} %Reset subsection
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Changing Frame Number}
+	\begin{itemize}
+		\item By default, the frame number increases with each new frame
+\vspace{0.2in}
+		\item You can manually change the frame counter by positive or negative integers
+		\begin{itemize}
+			\item Useful if you want to ``freeze'' slides or iteratively display things
+		\end{itemize}
+		\begin{lstlisting}
+\addtocounter{framenumber}{-1}
+\begin{frame}[t]{New slide}
+	Notice the frame number didn't change
+\end{frame }
+		\end{lstlisting}
+	\end{itemize}
+\end{frame}
+%%%%
+\addtocounter{framenumber}{-1}
+\begin{frame}[t]{New slide}
+	Notice the frame number didn't change (bottom right corner)
+\end{frame}

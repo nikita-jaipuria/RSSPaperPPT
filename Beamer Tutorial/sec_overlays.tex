@@ -1,0 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Overlays}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Adding Overlays} 
+	\begin{itemize}
+		\item Here's how you can overlay text
+\pause
+		\item So that you can leave it temporarily blurred out
+\pause
+		\item One of the easiest ways to do so is with the \verb|\pause| command
+		\begin{itemize}
+			\item Here's the code I just used:
+			\begin{lstlisting}
+\item Here's how you can overlay text
+\pause
+\item So that you can leave it temporarily blurred out
+\pause
+\item One of the easiest ways to do so is with the
+			\end{lstlisting}
+\pause
+			\item Each \verb|\pause| command hides the text that follows and they stack upon each other
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Adding Overlays} 
+	\begin{itemize}
+		\item<1-4> Another way to do it is within the itemize framework
+\vspace{0.1in}
+		\item<2-> When you command \verb|\item|, you can specify in which frame(s) the text will be displayed
+		\begin{itemize}
+			\item You just have to add ``$<$frame number(s)$>$'' immediately after \verb|\item|
+			\item Example: \verb|\item<2>| will only display the text in the second frame
+			\item<3-> You can also make them stay visible using a hyphen
+			\item<3-> Example: \verb|\item<2->| will display the text in the second and all subsequent frames
+		\end{itemize}
+\vspace{0.1in}
+		\item<4-> You can also use that to make text disappear
+		\begin{itemize}
+			\item<5-> See what just happened with the first bullet point?
+			\item<5-> I used \verb|\item<1-4>| to make it disappear after the fourth frame
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Adding Overlays} 
+	\begin{itemize}
+		\item Lastly, another simple option is to just make two copies of the same slide, one with additional material
+		\begin{itemize}
+			\item Can use the \verb|\addtocounter{framenumber}{-1}| command we discussed to freeze the frame counter
+			\item This is particularly useful when you have figures because the previous two methods have problems
+		\end{itemize}
+\pause
+\vspace{0.1in}
+		\item You can also try more advanced commands such as \verb|\only<2->| or \verb|\visible<2->| or \verb|\uncover<2->|
+		\begin{itemize}
+			\item They all have their own nuances, Google it if you think you need to use them
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+

@@ -1,0 +1,121 @@
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{tikz}
+%\usepackage{movie15}
+\usepackage{algorithm} % must read after hyperref
+\usepackage{algorithmic}
+\usepackage{subfigure,MnSymbol}
+\usepackage{graphicx,color,colortbl}
+%\usepackage[footnotesize,bf]{caption}
+\usepackage{bm,amsfonts,graphics}
+\usepackage{tikz} %,tkz-graph,tkz-arith,tkz-berge}
+\usetikzlibrary{arrows,shapes,positioning}
+
+\graphicspath{{./}{figures/}}
+\usepackage{multicol}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{rem}{Remark}
+
+\newcommand{\jcols}[4]{
+\begin{columns}[T]\begin{column}[T]{#3\textwidth} #1 \end{column}
+\begin{column}[T]{#4\textwidth} #2 \end{column}
+\end{columns}}
+
+\newcommand{\jcolsb}[4]
+{\begin{columns}[b]
+\begin{column}{#3\textwidth} #1 \vspace{0pt}
+\end{column}
+\begin{column}{#4\textwidth} #2 \vspace{0pt}
+\end{column}
+\end{columns}}
+
+\newcommand{\jcolsc}[4]
+{\begin{columns}[c]
+\begin{column}{#3\textwidth} #1 \vspace{0pt}
+\end{column}
+\begin{column}{#4\textwidth} #2 \vspace{0pt}
+\end{column}
+\end{columns}}
+\mode<presentation>
+{
+	\usetheme{ACL}
+        \setbeamercovered{transparent=0}
+}
+
+\input{resizer}
+
+\logo{
+\includegraphics[height = 0.6cm,trim=0 50 0 0,clip]{AO-logo-high_color-top-MIT}
+\includegraphics[height = 0.5cm,trim=0 0 0 0,clip]{ACL_logo}
+}
+
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+%\setbeamertemplate{frametitle}[default][center]
+\setbeamerfont{title}{size=\large,series=\bfseries}
+\setbeamerfont{framesubtitle}{series=\mdseries,size=\large}
+\graphicspath{{./}{figures/}}
+\usepackage[square, numbers, comma]{natbib}	% use Natbib for author-name
+									% citations. In a presentation,
+									% this is more legible than pure
+									% numbers, like [21]. Google
+									% "natbib" for more information.
+									% Instead of "\cite{abc}", use
+									% "\citep{abc}" or "\citet{abc}"
+\bibliographystyle{plainnat}		% Natbib specific
+%\bibpunct{(}{)}{,}{a}{}{,}			% Natbib specific
+
+\definecolor{Maroon}{RGB}{112,0,0}
+\definecolor{Crimson}{RGB}{200,0,0}
+\definecolor{purple}{RGB}{112,0,112}
+
+\newcommand{\bee}{\begin{enumerate}}
+\newcommand{\eee}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\bii}{\begin{itemize}\small}
+\newcommand{\beee}{\begin{enumerate}\scriptsize}
+\newcommand{\biii}{\begin{itemize}\footnotesize}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\jtem}{\vfill\item}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\njra}{\color{red} $\Rightarrow$~\color{black}}
+\newcommand{\nred}[1]{{\tiny \color{red} XX #1 XX\color{black}}}
+%\newcommand{\jframe}[1]{\begin{frame}\nred{#1}\end{frame}}
+\newcommand{\jframe}[2]{\begin{frame}\frametitle{#1} #2 \end{frame}}
+\newcommand{\jframeb}[2]{\begin{frame}[t]{#1} \begin{itemize} #2 \end{itemize} \end{frame}}
+\newcommand{\jframet}[2]{\begin{frame}[t]\frametitle{#1} #2 \end{frame}}
+\newcommand{\ji}[2]{\begin{itemize}\setlength{\itemsep}{#1mm}{#2}\end{itemize}}
+\newcommand{\jen}[2]{\begin{enumerate}\setlength{\itemsep}{#1mm}{#2}\end{enumerate}}
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\todo}[1]{{\color{magenta} XX- #1 -XX}}
+\newcommand{\XX}[1]{{\color{red} XX- #1 -XX}}
+\newcommand{\alertr}[1]{\textbf{\color{red} #1}}
+
+\setbeamercovered{transparent=10}
+\setbeamercolor{title}{bg = black!10}
+\setbeamercolor{frametitle}{bg = black!0}
+\setbeamercolor{thm}{bg = black!0}
+%\setbeamercolor{alerted text}{fg=blue}
+%\setbeamerfont{alerted text}{series = \bfseries}
+
+%{use = palette secondary, bg = palette secondary.bg}
+
+\setbeamercolor{normal text}{fg=black}  
+\setbeamertemplate{enumerate items}[ball]
+\setbeamertemplate{enumerate subitem}{(\alph{enumii})}
+\setbeamertemplate{enumerate subsubitems}[triangle]
+\setbeamertemplate{itemize item}{$\filledmedtriangleright$}
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{itemize subitem}{\tiny $\stackrel{\color{red}\filledmedsquare\color{black}}{\hbox{\vrule width 0ex height .25ex}}$}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=5mm, text margin right=8mm}
+
+\tikzstyle{input} = [coordinate] %
+\tikzstyle{block} = [draw, fill=red!20, rectangle, minimum height=3em, minimum width=6em] %
+\tikzstyle{block2} = [draw, fill=blue!20, diamond, minimum height=3em, minimum width=6em] %

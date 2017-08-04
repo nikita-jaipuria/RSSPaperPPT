@@ -1,0 +1,144 @@
+\lstset{language=TeX}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Make a Frame (Slide)}
+	\begin{itemize}
+		\item Create a new frame using:
+		\begin{verbatim}
+			\begin{frame}[t]{Frame Title}
+				%%% Add your stuff here
+			\end{frame}
+		\end{verbatim}
+\vspace{0.2in}
+		\item For each slide, all your text, figures, and lists have to be within ``begin\{frame\}'' and ``end\{frame\}''
+\vspace{0.2in}
+		\item The ``[t]'' makes the text top-aligned
+		\begin{itemize}
+			\item You can also do center-aligned ``[c]'' and bottom-aligned ``[b]''
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ordered Lists}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Make a Frame (Slide)}
+	\begin{itemize}
+		\item The basic slide is an ordered list, which has two versions:
+		\begin{itemize}
+			\item Bulleted lists
+			\begin{lstlisting}
+\begin{itemize}
+	%%% Your code here
+\end{itemize}
+			\end{lstlisting}
+\vspace{0.2in}
+			\item Numbered lists
+			\begin{lstlisting}
+\begin{enumerate}
+	%%% Your code here
+\end{enumerate}
+			\end{lstlisting}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Make a Frame (Slide)}
+	\begin{itemize}
+		\item Both types of lists use the ``item'' command to add a new bullet/numbered
+		\begin{itemize}
+			\item Bulleted lists
+			\begin{lstlisting}
+\begin{itemize}
+	\item Your first line of bulleted text
+	\item Your second line of bulleted text
+\end{itemize}
+			\end{lstlisting}
+\vspace{0.2in}
+			\item Numbered lists
+			\begin{lstlisting}
+\begin{enumerate}
+	\item Your first line of numbered text
+	\item Your second line of numbered text
+\end{enumerate}
+			\end{lstlisting}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Make a Frame (Slide)}
+	\begin{itemize}
+		\item Example frame:
+		\begin{lstlisting}
+\begin{frame }[t]{Example Slide}
+	\begin{itemize}
+		\item Line of bulleted text
+		\item Line of bulleted text
+	\end{itemize}
+	\begin{enumerate}
+		\item Line of numbered text
+		\item Line of numbered text
+	\end{enumerate}
+\end{frame }
+		\end{lstlisting}
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]{Example Slide}
+	\begin{itemize}
+		\item Line of bulleted text
+		\item Line of bulleted text
+	\end{itemize}
+	\begin{enumerate}
+		\item Line of numbered text
+		\item Line of numbered text
+	\end{enumerate}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Make a Frame (Slide)}
+	\begin{itemize}
+		\item Can also make nested lists
+		\begin{lstlisting}
+\begin{itemize}
+	\item Line of bulleted text
+	\begin{itemize}
+		\item Nested bulleted list
+	\end{itemize}
+	\item Line of bulleted text
+	\begin{enumerate}
+		\item Nested numbered list
+	\end{enumerate}
+\end{itemize}
+		\end{lstlisting}
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]{Example Slide}
+	\begin{itemize}
+		\item Line of bulleted text
+		\begin{itemize}
+			\item Nested bulleted list
+		\end{itemize}
+		\item Line of bulleted text
+		\begin{enumerate}
+			\item Nested numbered list
+		\end{enumerate}
+	\end{itemize}
+	\begin{enumerate}
+		\item Line of numbered text
+		\begin{itemize}
+			\item Nested bulleted list
+		\end{itemize}
+		\item Line of numbered text
+		\begin{enumerate}
+			\item Nested numbered list
+		\end{enumerate}
+	\end{enumerate}
+\end{frame}

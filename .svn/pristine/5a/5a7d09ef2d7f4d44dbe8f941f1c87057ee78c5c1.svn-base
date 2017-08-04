@@ -1,0 +1,252 @@
+\documentclass[11pt,mathserif]{beamer} %You need this at the top to declare that you're using Beamer 
+
+%----------------------------------------------------------------------------------------------------------------------------------------------%
+%%%%%%%%% Before we start putting the presentation together, need to declare formating and packages %%%%
+
+%%%%%%%%%%%%%%% Standard packages%%%%%%%%%%%%%%%
+\usepackage{algorithm,algorithmic}  %2 packages for making nice looking algorithms
+\usepackage{amsmath,mathtools} %Standard math commands (like vectors, symbols, etc.)
+\usepackage{epsfig,epstopdf} %You need these if you have .eps vector graphics (recommend if possible)
+%\usepackage{tikz} %Sometimes you may want to use Tikz to make figures (but its pretty complicated)
+\usepackage{media9} %If you want to include movies (like in my earlier presentation) you'll need this package
+%%% Below are packages commonly used for making figures
+\usepackage{subfigure,MnSymbol,pdfpages}
+\usepackage{graphicx,color,colortbl}
+\usepackage{bm,amsfonts,graphics}
+
+\usepackage{listings} %You won't need this unless youre displaying source code - I DONT RECOMMEND YOU DO THIS YET
+
+
+
+%%%%%%%%%%%%%%% Commands for making the ACL slide format %%%%%%%%%%%%%%%%%
+\setbeamercolor{block title}{bg=blue!55,fg=black}%bg=background, fg= foreground
+\setbeamercolor{block body}{bg=blue!20,fg=black}%bg=background, fg= foreground
+\renewcommand{\vec}[1]{\mathbf{#1}} %Changes the ``vec'' command for vectors to bold font rather than arrows overhead
+\input{beamerstuff} %Contains most of the commands for formatting 
+
+
+%%%%%%%%%%%%%%%%%% Nice pop up text blocks from Shih-Yuan %%%%%%%%%%%%%%%%%%%
+\usepackage[absolute,overlay]{textpos} %Packages needed for the popup textbox
+\newenvironment{myfootnote}[3]{%
+\begin{textblock*}{#3}(#1,#2) 
+\tiny\begingroup\color{blue!50!black}}{\endgroup\end{textblock*}} %These 3 lines are all one command
+
+
+%----------------------------------------------------------------------------------------------------------------------------------------------%
+%%%%%%%%%%%%%%%%%%%%  Create the title slide  %%%%%%%%%%%%%%%%
+\title[Beamer Slides]{Making Slides with Beamer} %Make the title
+\subtitle[]{An Introduction} %Make the subtitle (if applicable)
+\author[J. Quindlen]{Jack Quindlen \inst{1}} %Declare author(s)
+\institute[ACL,MIT]	{\inst{1} Aerospace Controls Laboratory, MIT } %declare your institution, ie the lab
+\date{\today} %Add the date (when the presentation is compiled)
+
+\iftrue
+\AtBeginSection[]{}
+\setcounter{framenumber}{0} %Reset frame counter on the bottom right-hand corner
+\fi
+
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%%%%%%%%%%%%%%%%%%%% Actually start making the slides %%%%%%%%%%%%%%%%%%
+\begin{document} %Need this to signify the start of the actual slides
+
+%%%%%%%%%
+\frame{\titlepage} %Need this command to display the title page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%5%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Why Use Beamer?} %Initializes the slide - the part within {xyz} is the title displayed at the top
+	\begin{itemize} %Start a bulleted list
+		\item Easier to write equations and algorithms than Powerpoint %Add an item in the bulleted list
+		\begin{itemize} %Start a nested bulleted list
+			\item Can usually copy and paste directly from your LaTeX papers %Add an item in the nested bulleted list
+		\end{itemize} %End the  nested list
+\vspace{0.2in} %Add extra vertical spacing
+		\item Easier to collaborate %Add an item in the original bulleted list
+		\begin{itemize} %Add another nested bulleted list
+			\item No issues like Powerpoint 2012 vs 2014 vs 2016 compatibility
+			\item Can break up presentation among multiple authors more easily using \verb|\input{}| commands
+		\end{itemize}
+\vspace{0.2in}
+		\item Spend less(no?) time reformatting the same material if you reuse it in another presentation 
+\vspace{0.2in}
+		\item Who really needs those goofy animations during an actual conference presentation anyways?
+	\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%5%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]{Overview} %Initializes the slide - the part within {xyz} is the title displayed at the top
+	\begin{itemize} %Start a bulleted list
+		\item Basic slides %Add an item in the bulleted list
+		\begin{itemize} %Start a nested bulleted list
+			\item Title slides %Add an item in the nested bulleted list
+			\item Ordered lists
+			\item Figures
+			\item Columns
+		\end{itemize} %End the  nested list
+\vspace{0.1in} %Add extra vertical spacing
+		\item Formatting %Add an item in the original bulleted list
+		\begin{itemize} %Add another nested bulleted list
+			\item Headers, footers, sections
+			\item References and citations
+			\item Overlays and pauses
+		\end{itemize}
+\vspace{0.1in}
+		\item Misc things
+		\begin{itemize}
+			\item Input files
+			\item Math equations/symbols
+			\item Pop-up text boxes
+			\item Movies
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%5%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]{Before Making Slides} %Initializes the slide - the part within {xyz} is the title displayed at the top
+	\begin{enumerate} %Start a numbered list
+		\item Download and install a TeX distribution - here's what I use %An item in the numbered list
+		\begin{itemize} %Start a nested bulleted list
+			\item Windows: MiKTeX- \url{https://miktex.org/} %\url{...} creates a clickable hyperlink
+			\item Ubuntu: TeX Live- ``sudo apt-get install texlive-full''
+\vspace{12pt} %This manually adds extra vertical spacing
+			\item These can install packages on the fly when you need new ones
+		\end{itemize}
+		
+\vspace{24pt} %''24pt'' refers to an equivalent of a 24 pt word between lines, you can also use ``\vspace{0.1in} for inches, or the same with centimeters
+		\item Download and install a text editor %An item in the numbered list
+		\begin{itemize} %Start a nested bulleted list
+			\item I use TexWorks- \url{https://www.tug.org/texworks/}, but there's alot of different options %An item in the bulleted list
+			\item I believe TexLive automatically installs TexWorks, but you can install it from ``sudo add-apt-repository ppa:texworks/stable''
+\vspace{0.1in} %\vspace{} for ``down 0.1 inches''
+			\item If you're using TexWorks, you'll also need to install a dictionary.  You can find instructions here- \href{http://tex.stackexchange.com/questions/235313/how-to-add-spell-checker-to-texworks-on-windows}{http://tex.stackexchange.com} %\href{actual url}{your text} also creates a hyperlink, but you can add your own text in the case hyperlink is long
+		\end{itemize}
+	\end{enumerate}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%5%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]{Before Making Slides} %Initializes the slide - the part within {xyz} is the title displayed at the top
+	\begin{itemize} %Start a bulleted list
+		\item You can download the ACL beamer template off of SVN at:
+		\url{svn://hohmann.mit.edu/acl/ACL_Beamer_Template/ACL_Beamer_Template.tex}
+\vspace{12pt}
+		\item In addition to the ``.tex'' file, you will need to include the following files in the presentation directory
+		\begin{itemize}
+			\item ``beamerouterthemeACL.sty''
+			\item ``beamerstuff.tex''
+			\item ``beamerthemeACL.sty''
+			\item ``resizer.tex''
+			\item Which contain the style files that make the ACL theme
+		\end{itemize}
+\vspace{12pt}
+		\item You'll also need to include a ``figure'' subfolder with two pictures
+		\begin{itemize}
+			\item ``ACL\_logo.jpg''
+			\item ``AO-logo-high\_color-top-MIT.jpg''
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%%%%% I don't recommend you look at these TeX source files until after you've gone through the PDF presentation since I have added some more advanced tricks throughout the code. 
+% Basic slides
+\section{Basic Slides}
+\subsection{Title Slides} 
+\input{sec_title} %Don't look at this until you've already gone through the presentation
+\input{sec_lists} %Don't look at this until you've already gone through the presentation
+\input{sec_figures} %Don't look at this until you've already gone through the presentation
+\input{sec_columns} %Don't look at this until you've already gone through the presentation
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%5%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]{Overview} %Initializes the slide - the part within {xyz} is the title displayed at the top
+	\begin{itemize} %Start a bulleted list
+		\item Basic slides %Add an item in the bulleted list
+		\begin{itemize} %Start a nested bulleted list
+			\item Title slides %Add an item in the nested bulleted list
+			\item Ordered lists
+			\item Figures
+			\item Columns
+		\end{itemize} %End the  nested list
+\vspace{0.1in} %Add extra vertical spacing
+		\item Formatting %Add an item in the original bulleted list
+		\begin{itemize} %Add another nested bulleted list
+			\item Headers, footers, sections
+			\item References and citations
+			\item Overlays and pauses
+		\end{itemize}
+\vspace{0.1in}
+		\item Misc things
+		\begin{itemize}
+			\item Input files
+			\item Math equations/symbols
+			\item Pop-up text boxes
+			\item Movies
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%%%%% Once you're comfortable with the basic steps, you can start looking at the source code in these TeX files
+% Formatting things
+\section{Formatting Things}
+\input{sec_headers}
+\input{sec_references}
+\input{sec_overlays}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%5%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]{Overview} %Initializes the slide - the part within {xyz} is the title displayed at the top
+	\begin{itemize} %Start a bulleted list
+		\item Basic slides %Add an item in the bulleted list
+		\begin{itemize} %Start a nested bulleted list
+			\item Title slides %Add an item in the nested bulleted list
+			\item Ordered lists
+			\item Figures
+			\item Columns
+		\end{itemize} %End the  nested list
+\vspace{0.1in} %Add extra vertical spacing
+		\item Formatting %Add an item in the original bulleted list
+		\begin{itemize} %Add another nested bulleted list
+			\item Headers, footers, sections
+			\item References and citations
+			\item Overlays and pauses
+		\end{itemize}
+\vspace{0.1in}
+		\item Misc things
+		\begin{itemize}
+			\item Input files
+			\item Math equations/symbols
+			\item Pop-up text boxes
+			\item Movies
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%%%%% Other stuff that to consider %%%%%%%%%%%
+\section{Misc}
+\input{sec_misc}
+
+%%%%%%%%%
+\frame{\titlepage} %Redisplay the title page (such as at the end of the presentation)
+
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%Bibliography
+\begin{frame}[allowframebreaks]{References}
+\bibliographystyle{unsrt}
+\bibliography{references/ACL_publications}
+\end{frame}
+\end{document} %Need this to end the document

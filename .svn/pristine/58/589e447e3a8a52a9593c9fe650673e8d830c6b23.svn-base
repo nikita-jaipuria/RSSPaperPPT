@@ -1,0 +1,49 @@
+Included files:
+beamerthemeACL.sty      - ACL Latex Beamer theme style file
+beamerouterthemeACL.sty - ACL Latex Beamer outer theme style file
+ACL_Beamer_Template.tex - ACL Beamer Template tex file
+ACL_Beamer_Template.pdf - ACL Beamer Template output pdf file
+figures/ACL_logo.jpg    - ACL logo in jpg
+Makefile                - Makefile for convenience only
+                          (non-essential)
+ref.bib                 - Example bibliography file (editable using
+                          JabRef http://jabref.sourceforge.net), for
+                          use with BibTeX (non-essential)
+
+1. To use the ACL Beamer Template, simply copy everything and modify
+   ACL_Beamer_Template.tex for your purposes.
+2. To install the ACL Latex Beamer theme style files to your Latex
+   system, do the following:
+   2.1 Copy beamerthemeACL.sty to [beamer-root]/themes/theme
+   2.2 Copy beamerouterthemeACL.sty to [beamer-root]/themes/outer
+   2.3 On a typical Ubuntu (Linux) system, [beamer-root] resides in:
+       /usr/share/texmf/tex/latex/beamer
+   2.3 Rehash your Latex system. On a typical Ubuntu (Linux) system,
+       this is accomplished by issuing the following in a terminal:
+       $ sudo texconfig rehash
+       followed by your root password.
+3. The ACL Latex Beamer theme takes 6 (obviously optional) options:
+   logoshiftdown
+   logoshiftleft
+   titleshrinkwidth
+   titleshiftleft
+   bottombarleftproportion
+   bottombarrightproportion
+   so that you can do (for example):
+   \usetheme[logoshiftdown = 2pt, logoshiftleft = 2pt,
+       titleshrinkwidth = 2.8cm, titleshiftleft = 6mm,
+       bottombarleftproportion = 0.25, bottombarrightproportion =
+		0.25]{ACL}
+   to do adjustments to accomodate your actual logo size, and
+   proportions of name and date sections in the bottom bar. The
+   default values are adjusted to suit the ACL logo in the figures/
+   directory, with 1/3 space allocated for each of the 3 sections in
+   the bottom bar.
+4. The Makefile can be invoked in a Unix based system like Linux. This
+   is non-essential and provided only for convenience. Example uses:
+   $ make clean; make
+   $ make clean
+   $ make
+5. Feel free to modify to suit your needs. If you have some
+   modifications that can improve the ACL Latex Beamer theme style
+   files, feel free to commit changes here.

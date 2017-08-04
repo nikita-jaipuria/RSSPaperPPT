@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Handling References}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Adding References} 
+	\begin{itemize}
+		\item Two things needed for references
+		\begin{enumerate}
+			\item Add a citation in the text
+			\item Link to a bibliography (.bibtex) file
+		\end{enumerate}
+	\end{itemize}
+	\begin{enumerate}
+		\item Add a citation in the text
+		\begin{itemize}
+			\item Multiple commands to add citations
+\vspace{0.1in}
+			\item The \verb|\cite{bibtexkey}| command adds a number: blah blah blah\cite{liu2016learning}
+			\item The \verb|\citet{bibtexkey}| command adds a name too: blah blah blah (\citet{Omidshafiei16_HBNIarxiv})
+			\item You can do other options, but you'll have to go through and add some new packages
+			\item You can also do multiple in a single call - \verb|\cite{bibtexkey2,bibtexkey3}|: blah blah blah \cite{Omidshafiei16_HBNIarxiv,Quindlen16_ACC}
+		\end{itemize}
+	\end{enumerate}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile,t]{Adding References} 
+	\begin{enumerate}
+		\item Add a citation in the text
+		\item Link to a bibliography (.bibtex) file
+		\begin{itemize}
+			\item Add a bibliography file to the document - I keep mine in a ``references'' subfolder or something similar
+			\begin{itemize}
+				\item Here I used the bibtex file ``ACL\_publications.bib''
+			\end{itemize}
+			\item Also need to specify a bibliography style, ex: ``unstr''
+\vspace{0.1in}
+			\item I usually place the link to the bibliography file at the very end of the document
+\vspace{0.2in}
+			\item Here's the sample code used at the end of this presentation
+			\begin{lstlisting}
+\begin{frame}[allowframebreaks]{References}
+\bibliographystyle{unsrt}
+\bibliography{references/ACL_publications}
+\end{frame }
+\end{document}
+			\end{lstlisting}
+		\end{itemize}
+	\end{enumerate}
+\end{frame}
+
+%Bibliography
+\begin{frame}[allowframebreaks]{References}
+\bibliographystyle{unsrt}
+\bibliography{references/ACL_publications}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]{Making References} 
+	\begin{itemize}
+		\item The previous slides showed how to add citations and link to a bibliography file, but you must first create that bibliography file
+		\begin{itemize}
+			\item There's already some bibliography files for the lab's own paper: \\
+			\url{svn://acl.mit.edu/acl/BIB_all/ACL_Publications.bib}
+		\end{itemize}
+\vspace{0.2in}
+		\item If you want to make your own bibliography you can use software such as \href{http://www.jabref.org/}{JabRef} to organize your files more easily
+\vspace{0.2in}
+		\item Especially if you're putting them into the ACL-common files, use the following style for your BibTex key:
+		\begin{itemize}
+			\item ``Last Name\ + \ Year (last two digits) + \_ + Journal/Conference Initials''
+			\item Example: ``Jack Quindlen'' + ``2016'' + ``American Control Conference'' = ``Quindlen16\_ACC''
+		\end{itemize}
+	\end{itemize}
+\end{frame}

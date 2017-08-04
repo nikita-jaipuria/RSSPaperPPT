@@ -1,0 +1,197 @@
+\documentclass[11pt,mathserif]{beamer}
+%%%%%%%%%%% All the standard packages %%%%
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{epsfig}
+\usepackage{tikz} 
+\usepackage{algorithm} % must read after hyperref
+\usepackage{algorithmic}
+\usepackage{subfigure,MnSymbol,pdfpages}
+\usepackage{graphicx,color,colortbl}
+\usepackage{bm,amsfonts,graphics}
+\usepackage{epstopdf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% The package you need for movies %%%%%%%%%%%%
+\usepackage{media9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%% Other stuff %%%%
+\setbeamercolor{block title}{bg=blue!55,fg=black}%bg=background, fg= foreground
+\setbeamercolor{block body}{bg=blue!20,fg=black}%bg=background, fg= foreground
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\input{beamerstuff}
+
+%%%%%%%%%%%%%%%%%% Text blocks from Shih-Yuan
+%====Define myfootnote environment==== %
+\usepackage[absolute,overlay]{textpos} 
+\newenvironment{myfootnote}[3]{%
+\begin{textblock*}{#3}(#1,#2) 
+\tiny\begingroup\color{blue!50!black}}{\endgroup\end{textblock*}} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% Start the actual code here %%%%%%%%%%
+
+\title[]{Embed Videos in Beamer}
+\author[J. Quindlen]{Jack Quindlen\inst{1}}
+\institute[ACL,MIT]	{
+	\inst{1} ACL, MIT
+	} 
+
+\date{\today}
+
+\iftrue
+\AtBeginSection[]{}
+\setcounter{framenumber}{0}
+\fi
+
+\begin{document}
+
+%%%%%%%%% Title slide
+\frame{\titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% New slide
+\begin{frame}[t]{Notes}
+	\begin{itemize}
+		\item \textbf{Intro}: you should use this as a template for embedding videos.  Copy and paste it into your code as necessary
+\vspace{12pt}
+		\item I've tested this on both Windows and Ubuntu
+		\begin{itemize}
+			\item Depending on your compiler, you might not be able to see the videos in your compiler's display, but you can view it when you open it in Adobe Reader/Acrobat
+		\end{itemize}
+\vspace{12pt}
+		\item \textbf{However}, I have not been able to get the videos to display properly in Ubuntu
+		\begin{itemize}
+			\item It correctly compiles - the videos are embedded, but the presentation software can't display it
+			\item I've tried Adobe Reader 9, Okular in Ubuntu but have not been able to get videos to display properly
+			\item Feel free to edit this if you do get it to work!
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% New slide
+\begin{frame}[t]{Notes}
+	\begin{itemize}
+		\item Two ways to embed videos in your presentation:
+		\begin{enumerate}
+			\item Youtube (or whatever else) links embedded in the player
+			\item Local files on your hard drive
+		\end{enumerate}
+\vspace{12pt}
+		\item This uses the media9 package.  You have to make sure it's added - see line 18 of the TeX code
+\vspace{24pt}
+		\item Start with Youtube videos
+	\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% New slide - THIS IS A YOUTUBE LINK EXAMPLE
+\begin{frame}[t]{Youtube Video}
+	\begin{itemize}
+		\item This is the baseline example
+	\end{itemize}
+	\begin{figure}
+	\centering
+\includemedia[
+	    width=0.9\paperwidth,height=0.5\linewidth,
+	    activate=pageopen, %Load the video (but you'll have to click the button to start)
+	    flashvars={autoPlay=true}
+	        ]{}{https://www.youtube.com/v/opsmd5yuBF0} %URL of video
+        \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%% New slide - THIS IS A YOUTUBE LINK EXAMPLE - BETTER BECAUSE IT REMOVES TITLEBAR AND WHATNOT
+\begin{frame}[t]{Youtube Video}
+	\begin{itemize}
+		\item This removes the title bar from the top of the video
+	\end{itemize}
+	\begin{figure}
+	\centering
+\includemedia[
+	    width=0.9\paperwidth,height=0.5\linewidth,
+	    activate=pageopen, %Load the video (but you'll have to click the button to start)
+	    flashvars={modestbranding=1 % no YT logo in control bar
+        		&autohide=1 % controlbar autohide activated
+        		&showinfo=0 % no title and other info before start
+        		&rel=0 % no related videos after end}
+        		}
+	        ]{}{https://www.youtube.com/v/opsmd5yuBF0?rel=0} %URL of video (I'm not sure if you need to put the ``?rel=0'' at the end of the URL or in the ``flashvars'' command.  I just put it in both to be safe
+        \end{figure}
+        %{https://www.youtube.com/v/opsmd5yuBF0}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% New slide
+\begin{frame}[t]{Youtube Video}
+	\begin{itemize}
+		\item \textbf{Important notes:}
+		\begin{itemize}
+			\item If you copy the URL straight from your browser, the link will look like: \url{https://www.youtube.com/watch?v=opsmd5yuBF0}
+\vspace{6pt}
+			\item But you can't use that link - you need to replace ``.../watch?v=...'' with ``.../v/...''			\vspace{6pt}
+			\item When you copy your link into the beamer code, that same link will now look like:
+				\url{https://www.youtube.com/v/opsmd5yuBF0}
+\vspace{6pt}
+			\item You can also add ``rel=0'' to prevent the related videos from showing up at the end.  New url would look like:
+			\url{https://www.youtube.com/v/opsmd5yuBF0?rel=0}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% New slide
+\begin{frame}[t]{Youtube Video}
+	\begin{itemize}
+		\item \textbf{Important notes:}
+		\begin{itemize}
+			\item From what I can tell, the Youtube videos need to use FlashPlayer.  Make sure to install flashplayer \textbf{and} the ActiveX plugin
+
+		\end{itemize}
+\vspace{24pt}
+		\item Now look at local videos from your hard drive
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%% New slide - THIS IS A LOCAL (ON MY HARD DRIVE) EXAMPLE
+\begin{frame}[t]{Local Videos}
+	\begin{itemize}
+		\item Can also display videos from your local hard drive
+		\begin{itemize}
+			\item But it seems to store the video in your slides - your PDF will be large!
+			\item I've only tried it with mp4 videos.  Others report that other formats don't seem to work.
+			\item Also haven't been able to get a control bar to pop up.  You start the video with a button click
+			\begin{itemize}
+				\item You can use the spacebar to pause the video and arrow keys to fast forward/rewind
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	\begin{figure}
+	\centering
+\includemedia[
+	    width=0.7\paperwidth,height=0.4\linewidth,
+	    activate=pageopen, %load the video, but you will need to start it with a button click
+	    addresource=movies/acl_intro.mp4, %where the file is located
+	    flashvars={source=movies/acl_intro.mp4&autoPlay=true} %where the file is located
+	        ]{}{VPlayer.swf}
+        \end{figure}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%% New slide - THIS ONE WORKS TOO (But isn't centered)
+%\begin{frame}[t]{Local Videos}
+%	\begin{itemize}
+%		\item This works too
+%	\end{itemize}
+%\includemedia[
+%	    width=0.6\linewidth,height=0.6\linewidth,
+%	    activate=pageopen,
+%	    addresource=movies/Jack_ACC2017_vdp.mp4,
+%	    flashvars={source=movies/Jack_ACC2017_vdp.mp4&autoPlay=true}
+%	        ]{}{VPlayer.swf}
+%\end{frame}
+
+\end{document}
+

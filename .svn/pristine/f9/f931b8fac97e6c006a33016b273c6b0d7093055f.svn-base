@@ -1,0 +1,250 @@
+\documentclass[11pt,mathserif]{beamer}
+%\documentclass[11pt,mathserif,aspectratio=1610]{beamer}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{tikz} 
+\usepackage{movie15}
+\usepackage{algorithm} % must read after hyperref
+\usepackage{algorithmic}
+\usepackage{subfigure,MnSymbol,pdfpages}
+\usepackage{graphicx,color,colortbl}
+\usepackage{bm,amsfonts,graphics}
+\setbeamercolor{block title}{bg=blue!55,fg=black}%bg=background, fg= foreground
+\setbeamercolor{block body}{bg=blue!20,fg=black}%bg=background, fg= foreground
+
+\input{beamerstuff}
+
+\title[Short Title]{Full Title}
+\subtitle[Short Optional Subtitle]{Optional Subtitle}
+
+\author[Short Author Name]{Full Author Name}
+
+\institute[ACL, MIT]
+	{Aerospace Controls Laboratory\\
+	Department of Aeronautics \& Astronautics\\
+	Massachusetts Institute of Technology} 
+
+\date[Short Date]{Full Date}
+
+\iftrue
+\AtBeginSection[]
+{
+	\begin{frame}<beamer>{Outline}
+		\tableofcontents[currentsection, hideallsubsections]
+	\end{frame}
+}
+\setcounter{framenumber}{0}
+\fi
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\iftrue
+\section*{Outline}
+\begin{frame}{Outline}
+%\begin{frame}[allowframebreaks]{Outline}
+
+% Use this form for multi-column outline
+%\begin{multicols}{2}
+%	\tableofcontents[pausesections]
+%	%\tableofcontents
+%\end{multicols}
+% Use this form for multi-column outline
+
+	\tableofcontents[pausesections]
+	%\tableofcontents
+\end{frame}
+\fi
+
+\section[Short Section Name 1]{Full Section Name 1}
+\subsection[Short Subsection Name 1]{Full Subsection Name 1}
+\begin{frame}[t]{Slide Title 1}
+	\begin{itemize}	\itemsep 0.1in
+		\item Perhaps the work that has most influence on human
+			thoughts in the history of humanity
+			is~\citep{NewtonPbook1687}
+		\item In the early 20th century,~\citet{EinsteinAP1905}
+			proposed a theory that supercedes~\citep{NewtonPbook1687}
+		\item Blah blah blah ...
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Slide Title 2}
+	\begin{thm}[Euclid]
+		The number $\sqrt{2}$ is irrational.
+	\end{thm}
+	\begin{proof}
+		Assume for the sake of contradiction that $\sqrt{2}$ is
+		rational. Then $\sqrt{2} = \frac{a}{b}$ where $a$, $b$ are
+		integers with no common factors. In particular, they are not
+		\alert{both} even numbers. Taking squares on both sides and
+		rearranging, we get $2 b^2 = a^2$, so that $2$ divides $a^2$
+		and $a^2$ must be even. This implies $a$ is even. Letting
+		$a = 2c$ with $c$ being an integer, substitution into the
+		above gives $2 b^2 = 4 c^2$, or $b^2 = 2 c^2$. This shows that
+		$2$ divides $b^2$, and that $b$ is also even. This shows that
+		\alert{both} $a$ and $b$ are even, which is a contradiction
+		and completes the proof.
+	\end{proof}
+\end{frame}
+
+\section[Short Section Name 2]{Full Section Name 2}
+\subsection[Short Subsection Name 2]{Full Subsection Name 2}
+\begin{frame}[t]{Slide Title 3}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale = 1, >= stealth]
+	% Set up coordinate points
+	\path (0, 2) coordinate (A) ++(20: 4) coordinate (B)
+		++(0: -1) coordinate (C) ++(-20: 4.5) coordinate (D)
+		++(-0.8, 1) coordinate (E) ++(-70: 3.5) coordinate (F);
+	\path (A) ++(20: 5.2) coordinate (B);
+	\path (intersection of A--B and C--D) coordinate (G);
+	\path (intersection of C--D and E--F) coordinate (H);
+	\path (A |- 0, -0.822) coordinate (I);
+
+	\path (1.5, 0.5) coordinate (J);			% coordinate of x_0
+	\path (J) ++(80: 0.5) coordinate (K);		% coordinate of dJ_0
+	\path (intersection of J--K and A--B) coordinate(L);
+												% coordinate of x_1
+	\path (L) ++(80: 1) coordinate (M);			% coordinate of dJ_1
+	\path (M) ++(-70: 1) coordinate (N);
+	\path (intersection of M--N and A--B) coordinate (O);
+												% coordinate of z_1
+	\path (G) ++(40: 1.5) coordinate (P);		% coordinate of dJ_2
+	\path (P) ++(-110: 1) coordinate (Q);
+	\path (intersection of P--Q and C--D) coordinate (R);
+												% coordinate of z_2
+	\path (P) ++(-70: 1) coordinate (S);
+	\path (intersection of P--S and A--B) coordinate (T);
+												% coordinate of z_20
+	\path (H) ++(-40: 1) coordinate (U);		% coordinate of dJ_3
+	\path (U) ++(-160: 1) coordinate (V);
+	\path (intersection of U--V and E--F) coordinate (W);
+												% coordinate of z_3
+	\path (A) ++(20: 1.3) coordinate (X);
+	\path (C) ++(-20: 2.8) coordinate (Y);
+	\path (E) ++(-70: 0.3) coordinate (Z);
+
+	% Feasible region
+	\fill[gray!20] (I) -- (A) -- (G) -- (H) arc (20:-13:5) -- cycle;
+	\draw (3.5, 0.8) node{$\mathcal{S}$};
+
+	% Hyperplanes H_i
+	\draw[gray] (A) --
+		node[pos = 0.1, sloped, above]{\scriptsize $H_1$} (B)
+		(C) --
+		node[pos = 0.46, sloped, above]{\scriptsize $H_2$} (D)
+		(E) --
+		node[pos = 0.85, sloped, above]
+		{\scriptsize $H_3(x_3)$} (F);
+
+	% Hyperplane normals
+	\draw[gray, thick, ->] (X) -- ++(110:0.5) coordinate (tmp);
+	\path (tmp) ++(0, 0.1)
+		node[gray, rotate = 20]{\scriptsize $\nabla h_1$};
+	\draw[gray, thick, ->] (Y) -- ++(70:0.5) coordinate (tmp);
+	\path (tmp) ++(0, 0.1)
+		node[gray, rotate = -20]{\scriptsize $\nabla h_2$};
+	\draw[gray, thick, ->] (Z) -- ++(20:0.5) coordinate (tmp);
+	\path (tmp) ++(0.2, 0) node[gray, rotate = -70]
+		{\scriptsize $\nabla h_3(x_3)$};
+
+	% Hypersurface G_3
+	\draw[gray] (H) arc (20:-13:5);
+	\draw[gray] (H) arc (20:30:5);
+	\draw (6.9, -0.5) node[gray, rotate = -90]{\scriptsize $G_3$};
+
+	% Point x_0
+	\draw plot[mark = x, mark size = 3] coordinates{(J)};
+	\draw[thick, ->] (J) -- (K);
+	\path (J) ++(0.05, -0.2) node{\scriptsize $x_0$};
+	\path (K) ++(0, 0.1) node{\scriptsize $-\nabla J(x_0)$};
+
+	% Point x_1
+	\draw plot[mark = x, mark size = 3] coordinates{(L)};
+	\draw[thick, ->] (L) -- (M);
+	\draw[thick, ->] (L) --
+		node[pos = 1, sloped, below]{\scriptsize $z_1$} (O);
+	\draw[dashed] (M) -- (O);		% dashed line
+	\path (L) ++(0.05, -0.2) node{\scriptsize $x_1$};
+	\path (M) ++(0, 0.1) node{\scriptsize $-\nabla J(x_1)$};
+
+	% Point x_2
+	\draw plot[mark = x, mark size = 3] coordinates{(G)};
+	\draw[thick, ->] (G) -- (P);
+	\draw[thick, ->] (G) --
+		node[pos = 1, sloped, below]{\scriptsize $z_2$} (R);
+	\draw[thick, ->] (G) --
+		node[pos = 1, sloped, below]{\scriptsize $z_d$} (T);
+	\draw[dashed] (P) -- (R);		% dashed line
+	\draw[dashed] (P) -- (T);		% dashed line
+	\path (G) ++(0.05, -0.2) node{\scriptsize $x_2$};
+	\path (P) ++(0, 0.1) node{\scriptsize $-\nabla J(x_2)$};
+
+	% Point x_3
+	\draw plot[mark = x, mark size = 3] coordinates{(H)};
+	\draw[thick, ->] (H) -- (U);
+	\draw[thick, ->] (H) --
+		node[pos = 1, sloped, below]{\scriptsize $z_3$} (W);
+	\draw[dashed] (U) -- (W);		% dashed line
+	\path (H) ++(-0.15, -0.15) node{\scriptsize $x_3$};
+	\path (U) ++(0.3, 0.3)
+		node{\scriptsize $-\nabla J(x_3)$};
+\end{tikzpicture}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}[t]{Slide Title 4}
+	\begin{block}{Block Title}
+		Block text.
+	\end{block}
+
+	\begin{block}{The LQG Controller Challenged}
+		In 1978,~\citet{DoyleTAC78} showed that the LQG regulator is
+		no longer supreme
+	\end{block}
+
+	\begin{itemize}	\itemsep 0.1in
+		\item More examples of citations using
+			``{\textbackslash}citep'' are:~\citep{AstromACC89,
+			BellaicheRMPCbookchp98, NashPhD50}
+		\item Using ``{\textbackslash}citet'':~\citet{SastryNSbook99,
+			TeoMITTR09, LaumondRMPCbook98}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Questions}
+	\begin{center} \Huge Questions? \end{center}
+\end{frame}
+
+% Save final frame number, so that backup slides are not counted
+\newcounter{finalframe}
+\setcounter{finalframe}{\value{framenumber}}
+
+\section*{Backup Slides}
+\subsection*{Full Subsection Name 3}
+
+\begin{frame}[t]{Backup Slide 1}
+	\begin{itemize} %\itemsep 0.1in
+		\item Blah blah blah ...
+	\end{itemize}
+\end{frame}
+
+\subsection*{References}
+\begin{frame}[allowframebreaks]{References}
+	\tiny
+	\def\newblock{}
+	\bibliography{IEEEabrv,ref}		% specify bibliography file
+									% (ref.bib) here
+\end{frame}
+
+\setcounter{framenumber}{\value{finalframe}}
+% Set up so that backup slides are not counted in total slides
+
+\end{document}

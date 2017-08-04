@@ -1,0 +1,43 @@
+\makeatletter
+\newdimen\labelwidthi
+\newdimen\labelwidthii
+\newdimen\labelwidthiii
+\newdimen\labelwidthiv
+\def\normal@labelsep{0.2em}
+\labelsep\normal@labelsep
+\settowidth{\labelwidthi}{iii}
+\settowidth{\labelwidthii}{ii}
+\settowidth{\labelwidthiii}{iii}
+%\settowidth{\labelwidthiv}{i}
+\setlength\leftmargini{0pt}
+\setlength\leftmarginii{1.5ex}
+\setlength\leftmarginiii{1.5ex}
+
+\leftmargini\labelwidthi    \advance\leftmargini\labelsep
+\leftmarginii\labelwidthii  \advance\leftmarginii\labelsep
+\leftmarginii\labelwidthiii \advance\leftmarginiii\labelsep
+
+%\leftmarginii\labelwidthiv  \advance\leftmarginiv\labelsep
+%\def\setleftmargin#1#2{\settowidth{\@tempdima}{#2}\labelsep\normal@labelsep
+%  \csname labelwidth#1\endcsname\@tempdima
+%  \@tempdimb\@tempdima \advance\@tempdimb\labelsep
+%  \csname leftmargin#1\endcsname\@tempdimb}
+%\def\@listI{\leftmargin\leftmargini
+%  \labelwidth\labelwidthi \labelsep\normal@labelsep
+%  \topsep \z@ \partopsep\z@ \parsep\z@ \itemsep\z@
+%  \listparindent 1em}
+%\def\@listii{\leftmargin\leftmarginii
+%  \labelwidth\labelwidthii \labelsep\normal@labelsep
+%  \topsep\z@ \partopsep\z@ \parsep\z@ \itemsep\z@
+%  \listparindent 1em}
+%\def\@listiii{\leftmargin\leftmarginiii
+%  \labelwidth\labelwidthiii \labelsep\normal@labelsep
+%  \topsep\z@ \partopsep\z@ \parsep\z@ \itemsep\z@
+%  \listparindent 1em}
+%\def\@listiv{\leftmargin\leftmarginiv
+%  \labelwidth\labelwidthiv \labelsep\normal@labelsep
+%  \topsep\z@ \partopsep\z@ \parsep\z@ \itemsep\z@
+%  \listparindent 1em}
+%\let\@listi\@listI
+%\@listi
+\makeatother
