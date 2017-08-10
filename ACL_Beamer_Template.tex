@@ -37,7 +37,7 @@
 		\item Objective:
 		\begin{itemize} \itemsep 0.025in
 			\item model a \textbf{human's preference} for how a dynamical system should act
-			\item learn $R_{H}(x^0,\textbf{u}_R,\textbf{u}_H) = \sum_{t=0}^{N} r_H(x^t,u_R^t,u_H^t) = \sum_{t=0}^{N} \textbf{w}^T\phi(x^t,u_R^t,u_H^t)$
+			\item learn $ R_H(\xi) = R_{H}(x^0,\textbf{u}_R,\textbf{u}_H) = \sum_{t=0}^{N} r_H(x^t,u_R^t,u_H^t) = \sum_{t=0}^{N} \textbf{w}^T\phi(x^t,u_R^t,u_H^t) = \textbf{w}^T\Phi(\xi)$
 		\end{itemize}
 		\item Problem Domain:
 		\begin{itemize} \itemsep 0.025in
@@ -46,13 +46,13 @@
 		\end{itemize}
 		\item Main Idea: active preference-based learning
 		\begin{itemize} \itemsep 0.025in
-			\item build on label ranking; learn from preferences/comparisons (\textbf{preference-based})
 			\item system decides on what preference queries to make (\textbf{active})
+			\item build on label ranking; learn from preferences/comparisons (\textbf{preference-based})
 		\end{itemize}
 		\item Challenges/Contribution
 		\begin{itemize} \itemsep 0.025in
-			\item complexity and continous nature of \textbf{queries}
-			\item \textbf{active synthesis} of queries satisfying system dynamics
+			\item complexity and continuous nature of \textbf{queries}
+			\item \textbf{active synthesis} of queries satisfying system dynamics: $x^{t+1} = f_{HR}(x^t,u_R^t,u_H^t)$
 			\item \textbf{maximize volume removed} from continuous hypothesis space by each query
 		\end{itemize}
 		% \item Perhaps the work that has most influence on human
@@ -61,6 +61,17 @@
 		% \item In the early 20th century,~\citet{EinsteinAP1905}
 		% 	proposed a theory that supercedes~\citep{NewtonPbook1687}
 		% \item Blah blah blah ...
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Overview}
+	\begin{itemize}	\itemsep 0.05in
+	\item Two main sections of active preference-based learning:
+	\begin{itemize} \itemsep 0.025in
+		\item \textbf{Active query synthesis}: generate query $\xi_A \text{ vs } \xi_B$ defined over same fixed scenario $\tau = (x^0,\textbf{u}_R)$ to maximize volume removed from continous hypothesis space of rewards 
+		\item model probability $p(I|\textbf{w})$ as noisily capturing preference w.r.t. $R_H$
+			$$\text{update function: } f_{\varphi}(\textbf{w})=p(I_t|\textbf{w})=\frac{1}{1+\text{exp}(-I_t\textbf{w}^T\varphi)} \text{ ,where } \varphi = \Phi(\xi_A)-\Phi(\xi_B)$$
+	\end{itemize}
 	\end{itemize}
 \end{frame}
 

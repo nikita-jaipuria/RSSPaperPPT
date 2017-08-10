@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.7)  4 AUG 2017 17:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.7)  10 AUG 2017 14:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1698,11 +1698,11 @@ Package pdftex.def Info: figures/ACL_logo.jpg used on input line 65.
 File: figures/AO-logo-high_color-top-MIT.jpg Graphic file (type jpg)
  <use figures/AO-logo-high_color-top-MIT.jpg>
 Package pdftex.def Info: figures/AO-logo-high_color-top-MIT.jpg used on input l
-ine 75.
+ine 76.
 (pdftex.def)             Requested size: 40.27371pt x 17.07182pt.
 File: figures/ACL_logo.jpg Graphic file (type jpg)
  <use figures/ACL_logo.jpg>
-Package pdftex.def Info: figures/ACL_logo.jpg used on input line 75.
+Package pdftex.def Info: figures/ACL_logo.jpg used on input line 76.
 (pdftex.def)             Requested size: 41.88818pt x 14.22636pt.
 
 [3
@@ -1711,11 +1711,11 @@ Package pdftex.def Info: figures/ACL_logo.jpg used on input line 75.
 File: figures/AO-logo-high_color-top-MIT.jpg Graphic file (type jpg)
  <use figures/AO-logo-high_color-top-MIT.jpg>
 Package pdftex.def Info: figures/AO-logo-high_color-top-MIT.jpg used on input l
-ine 79.
+ine 86.
 (pdftex.def)             Requested size: 40.27371pt x 17.07182pt.
 File: figures/ACL_logo.jpg Graphic file (type jpg)
  <use figures/ACL_logo.jpg>
-Package pdftex.def Info: figures/ACL_logo.jpg used on input line 79.
+Package pdftex.def Info: figures/ACL_logo.jpg used on input line 86.
 (pdftex.def)             Requested size: 41.88818pt x 14.22636pt.
 
 [4
@@ -1724,11 +1724,11 @@ Package pdftex.def Info: figures/ACL_logo.jpg used on input line 79.
 File: figures/AO-logo-high_color-top-MIT.jpg Graphic file (type jpg)
  <use figures/AO-logo-high_color-top-MIT.jpg>
 Package pdftex.def Info: figures/AO-logo-high_color-top-MIT.jpg used on input l
-ine 83.
+ine 90.
 (pdftex.def)             Requested size: 40.27371pt x 17.07182pt.
 File: figures/ACL_logo.jpg Graphic file (type jpg)
  <use figures/ACL_logo.jpg>
-Package pdftex.def Info: figures/ACL_logo.jpg used on input line 83.
+Package pdftex.def Info: figures/ACL_logo.jpg used on input line 90.
 (pdftex.def)             Requested size: 41.88818pt x 14.22636pt.
 
 [5
@@ -1737,42 +1737,55 @@ Package pdftex.def Info: figures/ACL_logo.jpg used on input line 83.
 File: figures/AO-logo-high_color-top-MIT.jpg Graphic file (type jpg)
  <use figures/AO-logo-high_color-top-MIT.jpg>
 Package pdftex.def Info: figures/AO-logo-high_color-top-MIT.jpg used on input l
-ine 87.
+ine 94.
 (pdftex.def)             Requested size: 40.27371pt x 17.07182pt.
 File: figures/ACL_logo.jpg Graphic file (type jpg)
  <use figures/ACL_logo.jpg>
-Package pdftex.def Info: figures/ACL_logo.jpg used on input line 87.
+Package pdftex.def Info: figures/ACL_logo.jpg used on input line 94.
 (pdftex.def)             Requested size: 41.88818pt x 14.22636pt.
 
 [6
+
+]
+File: figures/AO-logo-high_color-top-MIT.jpg Graphic file (type jpg)
+ <use figures/AO-logo-high_color-top-MIT.jpg>
+Package pdftex.def Info: figures/AO-logo-high_color-top-MIT.jpg used on input l
+ine 98.
+(pdftex.def)             Requested size: 40.27371pt x 17.07182pt.
+File: figures/ACL_logo.jpg Graphic file (type jpg)
+ <use figures/ACL_logo.jpg>
+Package pdftex.def Info: figures/ACL_logo.jpg used on input line 98.
+(pdftex.def)             Requested size: 41.88818pt x 14.22636pt.
+
+[7
 
 ]
 \c@finalframe=\count359
 File: figures/AO-logo-high_color-top-MIT.jpg Graphic file (type jpg)
  <use figures/AO-logo-high_color-top-MIT.jpg>
 Package pdftex.def Info: figures/AO-logo-high_color-top-MIT.jpg used on input l
-ine 97.
+ine 108.
 (pdftex.def)             Requested size: 40.27371pt x 17.07182pt.
 File: figures/ACL_logo.jpg Graphic file (type jpg)
  <use figures/ACL_logo.jpg>
-Package pdftex.def Info: figures/ACL_logo.jpg used on input line 97.
+Package pdftex.def Info: figures/ACL_logo.jpg used on input line 108.
 (pdftex.def)             Requested size: 41.88818pt x 14.22636pt.
 
-[7
+[8
 
 ]
 No file ACL_Beamer_Template.bbl.
 File: figures/AO-logo-high_color-top-MIT.jpg Graphic file (type jpg)
 <use figures/AO-logo-high_color-top-MIT.jpg>
 Package pdftex.def Info: figures/AO-logo-high_color-top-MIT.jpg used on input l
-ine 104.
+ine 115.
 (pdftex.def)             Requested size: 40.27371pt x 17.07182pt.
 File: figures/ACL_logo.jpg Graphic file (type jpg)
  <use figures/ACL_logo.jpg>
-Package pdftex.def Info: figures/ACL_logo.jpg used on input line 104.
+Package pdftex.def Info: figures/ACL_logo.jpg used on input line 115.
 (pdftex.def)             Requested size: 41.88818pt x 14.22636pt.
 
-[8
+[9
 
 ]
 \tf@nav=\write6
@@ -1784,8 +1797,8 @@ Package pdftex.def Info: figures/ACL_logo.jpg used on input line 104.
 \tf@snm=\write8
 \openout8 = `ACL_Beamer_Template.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 109.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 109.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 120.
  (./ACL_Beamer_Template.aux
 
 Package atenddvi Warning: Rerun LaTeX, last page not yet found.
@@ -1796,8 +1809,8 @@ Package atenddvi Warning: Rerun LaTeX, last page not yet found.
 * Rerun to get internal references right!
 *************************************************
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 109.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 109.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
 
 
 Package rerunfilecheck Warning: File `ACL_Beamer_Template.out' has changed.
@@ -1817,20 +1830,20 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 109.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 120.
  ) 
 Here is how much of TeX's memory you used:
- 35600 strings out of 493029
- 715641 string characters out of 6136235
- 793572 words of memory out of 5000000
- 38421 multiletter control sequences out of 15000+600000
+ 35607 strings out of 493029
+ 715813 string characters out of 6136235
+ 794572 words of memory out of 5000000
+ 38426 multiletter control sequences out of 15000+600000
  23227 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,17n,67p,10409b,573s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/s
 hare/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/usr/share/texl
-ive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/share/texlive/texmf
--dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}</usr/share/texlive/texmf-dist/fon
+ive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/share/texlive/texmf
+-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}</usr/share/texlive/texmf-dist/fon
 ts/type1/public/mnsymbol/MnSymbol5.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/mnsymbol/MnSymbol6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/mnsymbol/MnSymbol8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mn
@@ -1838,15 +1851,16 @@ symbol/MnSymbol9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
 i8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmssi9.pfb>
-Output written on ACL_Beamer_Template.pdf (8 pages, 881008 bytes).
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmssi9.pfb>
+Output written on ACL_Beamer_Template.pdf (9 pages, 894111 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
- 17 named destinations out of 1000 (max. 500000)
- 167 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 196 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
+ 19 named destinations out of 1000 (max. 500000)
+ 179 words of extra memory for PDF output out of 10000 (max. 10000000)
 
