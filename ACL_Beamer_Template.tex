@@ -9,13 +9,14 @@
 \usepackage{subfigure,MnSymbol,pdfpages}
 \usepackage{graphicx,color,colortbl}
 \usepackage{bm,amsfonts,graphics}
+\usepackage[export]{adjustbox}
 \setbeamercolor{block title}{bg=blue!55,fg=black}%bg=background, fg= foreground
 \setbeamercolor{block body}{bg=blue!20,fg=black}%bg=background, fg= foreground
 
 \input{beamerstuff}
 
 \title{RSS Paper}
-\subtitle{Active Preference-Based Learning of Reward Functions}
+\subtitle{Active Preference-Based Learning of Reward Functions~\citep{dorsaactive}}
 
 \author{Nikita Jaipuria}
 
@@ -52,8 +53,8 @@
 		\item Challenges/Contribution
 		\begin{itemize} \itemsep 0.025in
 			\item complexity and continuous nature of \textbf{queries}
-			\item \textbf{active synthesis} of queries satisfying system dynamics: $x^{t+1} = f_{HR}(x^t,u_R^t,u_H^t)$
-			\item \textbf{maximize volume removed} from continuous hypothesis space by each query
+			\item \textbf{active synthesis} of queries satisfying system dynamics: $x^{t+1} = f_{HR}(x^t,u_R^t,u_H^t)$ using continuous optimization
+			\item \textbf{maximize volume removed} from continuous hypothesis space of reward functions by each query
 		\end{itemize}
 		% \item Perhaps the work that has most influence on human
 		% 	thoughts in the history of humanity
@@ -64,33 +65,67 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Overview}
-	\begin{itemize}	\itemsep 0.05in
-	\item Two main sections of active preference-based learning:
-	\begin{itemize} \itemsep 0.025in
-		\item \textbf{Active query synthesis}: generate query $\xi_A \text{ vs } \xi_B$ defined over same fixed scenario $\tau = (x^0,\textbf{u}_R)$ to maximize volume removed from continous hypothesis space of rewards 
-		\item model probability $p(I|\textbf{w})$ as noisily capturing preference w.r.t. $R_H$
-			$$\text{update function: } f_{\varphi}(\textbf{w})=p(I_t|\textbf{w})=\frac{1}{1+\text{exp}(-I_t\textbf{w}^T\varphi)} \text{ ,where } \varphi = \Phi(\xi_A)-\Phi(\xi_B)$$
-	\end{itemize}
-	\end{itemize}
-\end{frame}
+% \begin{frame}[t]{Overview}
+% 	\begin{itemize}	\itemsep 0.05in
+% 	\item Two main sections of active preference-based learning:
+% 	\begin{itemize} \itemsep 0.025in
+% 		\item \textbf{Active query synthesis}: generate query $\xi_A \text{ vs } \xi_B$ defined over same fixed scenario $\tau = (x^0,\textbf{u}_R)$ to maximize volume removed from continous hypothesis space of rewards 
+% 		\item model probability $p(I|\textbf{w})$ as noisily capturing preference w.r.t. $R_H$
+% 			$$\text{update function: } f_{\varphi}(\textbf{w})=p(I_t|\textbf{w})=\frac{1}{1+\text{exp}(-I_t\textbf{w}^T\varphi)} \text{ ,where } \varphi = \Phi(\xi_A)-\Phi(\xi_B)$$
+% 	\end{itemize}
+% 	\end{itemize}
+% \end{frame}
 
 \begin{frame}[t]{Algorithm}
-	\begin{itemize}	\itemsep 0.05in
-		\item Inputs: $\phi, N, f_{HR}, iter$
-		\item Output: $p(\textbf{w})$
-		\item Step 1: Initialize $p(\textbf{w}) \sim Uniform(B)$, for a unit ball $B$
-		\item Step 2: \textbf{synthesize query} to remove as much volume as possible from the space of possible rewards (\textit{constrained optimization})
+	\begin{center}
+  	\includegraphics[width = 0.8\textwidth]{./Query}
+  	\vspace{0.25cm}
+  	\includegraphics[width = 0.45\textwidth]{./Algo}
+  	\end{center}
+  	% \includegraphics[width = 0.5\textwidth,right]{./QueryResponse}
+
+  	%   	\begin{figure}
+
+  	% \end{figure}
+%   	\hfill
+%   	\begin{figure}
+%   	  	  	\includegraphics[width = 0.4\textwidth]{./PrefQuery}
+%   	\includegraphics[width = 0.5\textwidth]{./QueryResponse}
+% \end{figure}
+\end{frame}
+
+\begin{frame}[t]{Results}
+	\begin{center}
+  	\includegraphics[width = 0.9\textwidth]{./BigResult}
+  	\end{center}
+  	\begin{center}
+  	% \vspace{0.25cm}
+  	\includegraphics[width = 0.55\textwidth]{./SmallResult}
+  	\end{center}
+\end{frame}
+
+\begin{frame}[t]{Discussion}
+\begin{itemize} \itemsep 0.05in
+	\item What is novel/interesting?
+	\begin{itemize} \itemsep 0.025in
+		\item \textbf{preference-based} approach allows users to compare two trajectories in various scenarios without having to demonstrate a full trajectory (of how they would like to drive, not how they actually drive)
+		\item \textbf{active} enables choosing informative test cases otherwise difficult to encounter in driving scenarios; addresses the limitation of training data sparsity/informativeness
+		\item In-depth investigation of the effect of \textbf{synthesis} of real trajectories for dynamical systems compared to relying on a discrete set
 	\end{itemize}
-
-\end{frame}
-
-\begin{frame}[t]{Slide Title 3}
-
-\end{frame}
-
-\begin{frame}[t]{Slide Title 4}
-
+	\item Limitations
+	\begin{itemize} \itemsep 0.025in
+		\item Markov assumption is inherently built into system dynamics
+		\item Feature selection is not active/based on expert knowledge
+		\item Reward function is constrained to be linear in the feature space
+		\item The entire formulation is for a human $H$ with only one other robot $R$
+		\item Formulation of $\textbf{w}_{true}$ was unclear
+		\item Experiments:
+		\begin{itemize} \itemsep 0.025in
+			\item potential functions' based reward function
+			\item $f_{HR}$ assumed as a simple point mass-dynamics model
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
 \end{frame}
 
 \begin{frame}[t]{Questions}
@@ -101,11 +136,11 @@
 \newcounter{finalframe}
 \setcounter{finalframe}{\value{framenumber}}
 
-\begin{frame}[t]{Backup Slide 1}
-	\begin{itemize} %\itemsep 0.1in
-		\item Blah blah blah ...
-	\end{itemize}
-\end{frame}
+% \begin{frame}[t]{Backup Slide 1}
+% 	\begin{itemize} %\itemsep 0.1in
+% 		\item Blah blah blah ...
+% 	\end{itemize}
+% \end{frame}
 
 \begin{frame}[allowframebreaks]{References}
 	\tiny
